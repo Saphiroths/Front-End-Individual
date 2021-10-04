@@ -9,19 +9,19 @@ import { Item } from '../Item';
 })
 export class ItemsComponent implements OnInit {
 
-  quests: Item[] = [];
+  Items: Item[] = [];
 
   constructor(private itemService: ItemService) { }
 
   ngOnInit(): void {
     this.getItems();
 
-    console.log(this.quests);
+    console.log(this.Items);
   }
 
   getItems(): void {
     this.itemService.getItems()
-      .subscribe(quest => this.quests = quest);
+      .subscribe(item => this.Items = item);
 
   }
 
