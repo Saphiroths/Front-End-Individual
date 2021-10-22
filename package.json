@@ -18,6 +18,8 @@
     "@angular/platform-browser": "~12.2.0",
     "@angular/platform-browser-dynamic": "~12.2.0",
     "@angular/router": "~12.2.0",
+    "@azure/msal-angular": "^2.0.4",
+    "@azure/msal-browser": "^2.18.0",
     "bootstrap": "^5.1.1",
     "cors": "^2.8.5",
     "jquery": "^3.6.0",

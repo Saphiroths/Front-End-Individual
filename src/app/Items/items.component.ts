@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ItemService } from '../Item.service';
 import { Item } from '../Item';
+import { MsalService } from '@azure/msal-angular';
 
 @Component({
   selector: 'app-items',
@@ -11,6 +12,7 @@ export class ItemsComponent implements OnInit {
 
   Items: Item[] = [];
 
+  
   constructor(private itemService: ItemService) { }
 
   ngOnInit(): void {
@@ -25,6 +27,7 @@ export class ItemsComponent implements OnInit {
 
   }
 
+  
   getGreeting(): String{
     var greeting: String;
     var today = new Date()

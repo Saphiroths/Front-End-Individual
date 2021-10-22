@@ -26,7 +26,10 @@
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+          <button class="btn btn-outline-success" type="submit" (click)="login()" *ngIf="!isLoggedIn()">Log in</button>
+        </li>
+        <li class="nav-item">
+          <button class="btn btn-outline-success" type="submit" (click)="logout()" *ngIf="isLoggedIn()">Log out</button>
         </li>
       </ul>
       <form class="d-flex">
@@ -38,4 +41,5 @@
 </nav>
 
 
-<app-items></app-items>
+<app-public-page></app-public-page>
+<router-outlet></router-outlet>
