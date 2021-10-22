@@ -7,6 +7,7 @@ import { ItemsComponent } from './Items/items.component';
 import { MsalModule, MsalService, MSAL_INSTANCE } from '@azure/msal-angular';
 import { IPublicClientApplication, PublicClientApplication } from '@azure/msal-browser';
 import { PublicPageComponent } from './public-page/public-page.component';
+import { NarutoPageComponent } from './naruto-page/naruto-page.component';
 
 export function MSALInstanceFactory(): IPublicClientApplication {
   return new PublicClientApplication({
@@ -21,7 +22,8 @@ export function MSALInstanceFactory(): IPublicClientApplication {
   declarations: [
     AppComponent,
     ItemsComponent,
-    PublicPageComponent
+    PublicPageComponent,
+    NarutoPageComponent
   ],
   imports: [
     BrowserModule,
