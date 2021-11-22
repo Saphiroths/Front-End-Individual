@@ -1,0 +1,10 @@
+version: "3.9"
+services:
+  app: # name of the first service
+    image: yarikbrouwer/front-end-individual:latest
+    ports:
+      - "6969:4200" # specify port forewarding
+  backend: # name of the third service
+    image: yarikbrouwer/taskservice:latest # specify image to build container from
+    ports:
+      - "44329:80" #specify ports forewarding
