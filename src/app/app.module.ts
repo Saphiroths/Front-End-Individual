@@ -8,7 +8,6 @@ import { MsalModule, MsalService, MSAL_INSTANCE } from '@azure/msal-angular';
 import { IPublicClientApplication, PublicClientApplication } from '@azure/msal-browser';
 import { PublicPageComponent } from './public-page/public-page.component';
 import { NarutoPageComponent } from './naruto-page/naruto-page.component';
-import { SignalRService } from './signal-r.service';
 import { RegistrationComponent } from './Registration/registration.component';
 import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
