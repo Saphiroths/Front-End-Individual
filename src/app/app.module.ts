@@ -9,6 +9,11 @@ import { IPublicClientApplication, PublicClientApplication } from '@azure/msal-b
 import { PublicPageComponent } from './public-page/public-page.component';
 import { NarutoPageComponent } from './naruto-page/naruto-page.component';
 import { SignalRService } from './signal-r.service';
+import { RegistrationComponent } from './Registration/registration.component';
+import { FormsModule } from '@angular/forms';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { MicrosoftLoginComponent } from './microsoft-login/microsoft-login.component';
+import { HeaderComponent } from './header/header.component';
 
 export function MSALInstanceFactory(): IPublicClientApplication {
   return new PublicClientApplication({
@@ -24,13 +29,18 @@ export function MSALInstanceFactory(): IPublicClientApplication {
     AppComponent,
     ItemsComponent,
     PublicPageComponent,
-    NarutoPageComponent
+    NarutoPageComponent,
+    RegistrationComponent,
+    MicrosoftLoginComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    MsalModule
+    MsalModule,
+    FormsModule,
+    NgbModule
   ],
   providers: [
     {
