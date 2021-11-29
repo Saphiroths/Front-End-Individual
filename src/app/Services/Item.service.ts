@@ -1,22 +1,29 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Item } from '../Models/Item';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ItemService {  
-  private itemURL = "https://localhost:44329/api/item/all"
-
+  public API_URL: string = environment.API_URL;
+  private itemURL: string = "https://localhost:44329/item/all"
+  private createURL: string = this.API_URL + '/item/create'
   httpOptions = {
-    headers: new HttpHeaders({'Content-Type': 'application/json'})
+    headers: new HttpHeaders({'Content-Type': 'application/json'}),
   }
+  public popup: Subject<any> = new Subject<any>();
 
   constructor(
     private http: HttpClient){ }
   
   getItems(): Observable<Item[]> {
     return this.http.get<Item[]>(this.itemURL);
+  }
+
+  createItem(Item: Item): Observable<Item> {
+    return this.http.post<Item>(this.createURL, Item, this.httpOptions)
   }
 }

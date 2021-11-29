@@ -1,0 +1,72 @@
+<meta name="referrer" content="unsafe-url">
+
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Create Item</h4>
+  </div>
+  <div class="modal-body">
+    <form ngNativeValidate #userForm="ngForm">
+      <div class="form-group text-center" >
+        <label>Title? required!</label><br>
+        <input required class="form-control" type="text" id="title" name="title" ngModel>
+      </div>
+      <div class="form-group text-center" >
+          <label>Description? required!</label><br>
+          <input required class="form-control" type="text" id="description" name="description" ngModel>
+        </div>
+        <div class="form-group text-center" >
+          <label>Price?</label><br>
+          <input class="form-control" type="number" id="price" name="price" ngModel>
+        </div>
+        <div class="form-group text-center" >
+          <label>Category? integer</label><br>
+          <input class="form-control" type="number" id="category" name="category" ngModel>
+        </div>
+        <div class="form-group text-center" >
+          <label>Picture? gyazo link</label><br>
+          <input class="form-control" type="text" id="picture" name="picture" ngModel>
+        </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="CreateItem(userForm.value)" (click)="modal.close('Save click')">Save</button>
+  </div>
+</ng-template>
+
+<button class="btn btn-lg btn-outline-primary" (click)="openModal(content)">Add item</button>
+
+
+
+<!-- <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Create Item</button>
+
+
+<ng-template #content let-modal>
+ 
+    <div id="myModal" class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">New item</h4>
+    </div>
+    <div class="modal-body">
+      <form ngNativeValidate #userForm="ngForm">
+        <div class="form-group text-center" >
+          <label>Title? required!</label><br>
+          <input required class="form-control" type="text" id="title" name="title" ngModel>
+        </div>
+        <div class="form-group text-center" >
+            <label>Description? required!</label><br>
+            <input required class="form-control" type="text" id="description" name="description" ngModel>
+          </div>
+          <div class="form-group text-center" >
+            <label>Price?</label><br>
+            <input required class="form-control" type="text" id="price" name="price" ngModel>
+          </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" (click)="CreateItem(userForm.value)" (click)="modal.close('Save click')">Save</button>
+    </div>
+  </ng-template> -->
+
+  
+
+
+

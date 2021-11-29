@@ -14,6 +14,7 @@ import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MicrosoftLoginComponent } from './microsoft-login/microsoft-login.component';
 import { HeaderComponent } from './header/header.component';
+import { AdditemComponent } from './additem/additem.component';
 
 export function MSALInstanceFactory(): IPublicClientApplication {
   return new PublicClientApplication({
@@ -33,6 +34,7 @@ export function MSALInstanceFactory(): IPublicClientApplication {
     RegistrationComponent,
     MicrosoftLoginComponent,
     HeaderComponent,
+    AdditemComponent,
   ],
   imports: [
     BrowserModule,
