@@ -1,3 +1,4 @@
+<meta name="referrer" content="unsafe-url">
 <br/>
 <h1 class="center" style="padding-bottom: 30px;">{{getGreeting()}} user!</h1>
 <h2 class="center">Items</h2>
@@ -10,12 +11,48 @@
 		  	<div  class="img-wrap"> <img src="{{Item.picture}}" height="600"/> </div>
 		  	<figcaption>
 		  		<a href="#" class="title">{{Item.title}}</a>
-		  		<div class="price mt-2">${{Item.price}}</div> 
+		  		<div class="description mt-2">{{Item.description}}</div>
+				  <div class="price mt-2">${{Item.price}}</div> 
+				  <div class="category mt-2">{{Item.category}}</div> 
+				  <button class="btn btn-lg btn-outline-primary" (click)="openModal(content, updateItem)">Update item</button>
 	  		</figcaption>
 	  	</figure> 
   	</div>
  </div>
 
+ <ng-template #content let-modal>
+	<div class="modal-header">
+	  <h4 class="modal-title" id="modal-basic-title">Update Item</h4>
+	</div>
+	<div class="modal-body">
+	  <form ngNativeValidate #userForm="ngForm">
+		<div class="form-group text-center" >
+		  <label>Title? required!</label><br>
+		  <input required class="form-control" type="text" id="title" name="title" ngModel>
+		</div>
+		<div class="form-group text-center" >
+			<label>Description? required!</label><br>
+			<input required class="form-control" type="text" id="description" name="description" ngModel>
+		  </div>
+		  <div class="form-group text-center" >
+			<label>Price?</label><br>
+			<input class="form-control" type="number" id="price" name="price" ngModel>
+		  </div>
+		  <div class="form-group text-center" >
+			<label>Category? integer</label><br>
+			<input class="form-control" type="number" id="category" name="category" ngModel>
+		  </div>
+		  <div class="form-group text-center" >
+			<label>Picture? gyazo link</label><br>
+			<input class="form-control" type="text" id="picture" name="picture" ngModel>
+		  </div>
+	  </form>
+	</div>
+	<div class="modal-footer">
+	  <button type="button" class="btn btn-outline-dark" (click)="updateItems(userForm.value)" (click)="modal.close('Save click')">Save</button>
+	</div>
+  </ng-template>
+  
 
 
 
