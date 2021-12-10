@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SignalRService } from './signal-r.service';
 
 @Component({
   selector: 'app-root',
@@ -9,12 +10,20 @@ export class AppComponent implements OnInit {
   title = 'front-end-individual';
 
 
-constructor() {
+constructor(public signalrService: SignalRService) {
   
 }
 
 
-ngOnInit(): void { }
+ngOnInit()
+{ 
+  this.signalrService.startConnection();
+
+  setTimeout(() => {
+    this.signalrService.askServerListener();
+    this.signalrService.askServer();
+  }, 2000);
+}
 
 }
 

@@ -12,7 +12,7 @@ export class SignalRService {
 
   startConnection = () => {
     this.hubConnection = new signalR.HubConnectionBuilder()
-    .withUrl('https://localhost:5001/toastr', {
+    .withUrl('https://localhost:5001/messages', {
         skipNegotiation: true,
         transport: signalR.HttpTransportType.WebSockets
     })
