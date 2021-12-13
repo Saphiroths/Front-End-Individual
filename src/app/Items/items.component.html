@@ -10,8 +10,10 @@
 		  	<div  class="img-wrap"> <img src="{{Item.picture}}" height="600"/> </div>
 		  	<figcaption>
 		  		<a href="#" class="title">{{Item.title}}</a>
-		  		<div class="price mt-2">${{Item.price}}</div> 
+		  		<div class="price mt-2">${{Item.price}}</div>
+				  <button (click)="deleteItem(Item.id)">Delete</button>
 	  		</figcaption>
+			
 	  	</figure> 
   	</div>
  </div>

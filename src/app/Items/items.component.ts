@@ -27,6 +27,10 @@ export class ItemsComponent implements OnInit {
 
   }
 
+  deleteItem(id: number): void {
+    console.log(id)
+    this.itemService.deleteItem(id)
+  }
   
   getGreeting(): String{
     var greeting: String;
