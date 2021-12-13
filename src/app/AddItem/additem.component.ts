@@ -59,4 +59,7 @@ CreateItem(item: Item) {
     }
   }
 
+  reloadCurrentPage() {
+    setTimeout(() => window.location.reload(), 500);
+   }
 }

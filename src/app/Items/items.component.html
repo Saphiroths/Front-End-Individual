@@ -1,4 +1,5 @@
 <meta name="referrer" content="unsafe-url">
+
 <br/>
 <h1 class="center" style="padding-bottom: 30px;">{{getGreeting()}} user!</h1>
 <h2 class="center">Items</h2>
@@ -15,12 +16,14 @@
 				  <div class="price mt-2">${{Item.price}}</div> 
 				  <div class="category mt-2">{{Item.category}}</div> 
 				  <button class="btn btn-lg btn-outline-primary" (click)="openModal(content, Item)">Update item</button>
-				  <button type="button" class="btn btn-outline-dark" (click)="deleteItems(Item)">Delete</button>
+				  <button type="button" class="btn btn-outline-dark" (click)="reloadCurrentPage()" (click)="deleteItems(Item)">Delete</button>
 	  		</figcaption>
 	  	</figure> 
   	</div>
  </div>
 
+ <app-additem></app-additem>
+ 
  <ng-template #content let-modal>
 	<div class="modal-header">
 	  <h4 class="modal-title" id="modal-basic-title">Update Item</h4>
@@ -50,7 +53,7 @@
 	  </form>
 	</div>
 	<div class="modal-footer">
-	  <button type="button" class="btn btn-outline-dark" (click)="updateItems(userForm.value)" (click)="modal.close('Save click')">Save</button>
+	  <button type="button" class="btn btn-outline-dark"  (click)="updateItems(userForm.value)" (click)="modal.close('Save click')" (click)="reloadCurrentPage()">Save</button>
 	</div>
   </ng-template>
   

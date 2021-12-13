@@ -97,4 +97,8 @@ export class ItemsComponent implements OnInit {
   }
 
 
+  reloadCurrentPage() {
+    setTimeout(() => window.location.reload(), 500);
+   }
+
 }

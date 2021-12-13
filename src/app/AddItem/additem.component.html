@@ -26,11 +26,12 @@
           <label>Picture? gyazo link</label><br>
           <input class="form-control" type="text" id="picture" name="picture" ngModel>
         </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-dark"  (click)="CreateItem(userForm.value)" (click)="modal.close('Save click')" (click)="reloadCurrentPage()" >Save</button>
+        </div>
     </form>
   </div>
-  <div class="modal-footer">
-    <button type="button" class="btn btn-outline-dark" (click)="CreateItem(userForm.value)" (click)="modal.close('Save click')">Save</button>
-  </div>
+
 </ng-template>
 
 <button class="btn btn-lg btn-outline-primary" (click)="openModal(content)">Add item</button>
