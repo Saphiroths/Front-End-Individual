@@ -38,7 +38,6 @@ export class ItemsComponent implements OnInit {
   }
 
   updateItems(item: Item) {
-    this.updateItem.id = item.id;
     this.updateItem.title = item.title;
     this.updateItem.description = item.description;
     this.updateItem.category = item.category;
@@ -52,17 +51,15 @@ export class ItemsComponent implements OnInit {
     )
   }
 
-  openModal(content: any, updateItem: Item) {
+  openModal(content: any, Item: Item) {
+    this.updateItem.id = Item.id
+    console.log(Item);
     this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title', size: 'lg'}).result.then((result) => {
       this.closeResult = `Closed with: ${result}`;
     }, (reason) => {
       this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
     });
-    // document.getElementById('title')?.setAttribute('value',updateItem.title)
-    // document.getElementById('description')?.setAttribute('value',updateItem.description)
-    // document.getElementById('price')?.setAttribute('value',updateItem.price.toString())
-    // document.getElementById('category')?.setAttribute('value',updateItem.category.toString())
-    // document.getElementById('picture')?.setAttribute('value',updateItem.picture)
+
   }
 
   private getDismissReason(reason: any): string {
