@@ -37,6 +37,12 @@ export class ItemsComponent implements OnInit {
 
   }
 
+  deleteItems(item: Item) {
+    console.log(item)
+    this.itemService.deleteItem(item)
+    .subscribe()
+  }
+
   updateItems(item: Item) {
     this.updateItem.title = item.title;
     this.updateItem.description = item.description;
@@ -72,6 +78,7 @@ export class ItemsComponent implements OnInit {
     }
   }
 
+ 
 
   
   getGreeting(): String{

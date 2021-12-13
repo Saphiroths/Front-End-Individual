@@ -12,6 +12,7 @@ export class ItemService {
   private itemURL: string = "https://localhost:44329/item/all"
   private createURL: string = this.API_URL + '/item/create'
   private updateURL: string = this.API_URL + '/item/update'
+  private deleteURL: string = this.API_URL + '/item/delete/'
   httpOptions = {
     headers: new HttpHeaders({'Content-Type': 'application/json'}),
   }
@@ -30,5 +31,9 @@ export class ItemService {
 
   updateItem(Item: Item): Observable<Item> {
     return this.http.put<Item>(this.updateURL, Item, this.httpOptions)
+  }
+
+  deleteItem(Item: Item): Observable<Item> {
+    return this.http.delete<Item>(this.deleteURL + Item.id, this.httpOptions)
   }
 }
