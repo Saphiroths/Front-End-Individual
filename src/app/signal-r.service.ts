@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import * as signalR from '@aspnet/signalr';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -9,6 +10,8 @@ export class SignalRService {
   constructor() { }
 
   hubConnection : signalR.HubConnection = {} as signalR.HubConnection;
+  message : string = '';
+  iets! : string
 
   startConnection = () => {
     this.hubConnection = new signalR.HubConnectionBuilder()
@@ -27,13 +30,15 @@ export class SignalRService {
 }
 
 askServer() {
-  this.hubConnection.invoke("askServer", "hey")
+  this.hubConnection.invoke("askServer", this.iets)
       .catch(err => console.error(err));
 }
 
 askServerListener() {
   this.hubConnection.on("askServerResponse", (someText) => {
-      console.log(someText);
+    this.message = someText;
   })
+
 }
+
 }

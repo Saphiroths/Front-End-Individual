@@ -15,6 +15,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MicrosoftLoginComponent } from './microsoft-login/microsoft-login.component';
 import { HeaderComponent } from './header/header.component';
 import { AdditemComponent } from './additem/additem.component';
+import { SignalrComponent } from './signalr/signalr.component';
 
 export function MSALInstanceFactory(): IPublicClientApplication {
   return new PublicClientApplication({
@@ -35,6 +36,7 @@ export function MSALInstanceFactory(): IPublicClientApplication {
     MicrosoftLoginComponent,
     HeaderComponent,
     AdditemComponent,
+    SignalrComponent,
   ],
   imports: [
     BrowserModule,

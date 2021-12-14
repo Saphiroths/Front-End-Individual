@@ -15,6 +15,7 @@ constructor(public signalrService: SignalRService) {
 }
 
 
+
 ngOnInit()
 { 
   this.signalrService.startConnection();
@@ -24,6 +25,8 @@ ngOnInit()
     this.signalrService.askServer();
   }, 2000);
 }
+
+
 
 }
 

@@ -79,8 +79,6 @@ export class ItemsComponent implements OnInit {
   }
 
  
-
-  
   getGreeting(): String{
     var greeting: String;
     var today = new Date()
@@ -95,7 +93,6 @@ export class ItemsComponent implements OnInit {
     }
     return greeting;
   }
-
 
   reloadCurrentPage() {
     setTimeout(() => window.location.reload(), 500);
