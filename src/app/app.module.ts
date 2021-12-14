@@ -16,6 +16,7 @@ import { MicrosoftLoginComponent } from './microsoft-login/microsoft-login.compo
 import { HeaderComponent } from './header/header.component';
 import { AdditemComponent } from './additem/additem.component';
 import { SignalrComponent } from './signalr/signalr.component';
+import { ChatComponent } from './chat/chat.component';
 
 export function MSALInstanceFactory(): IPublicClientApplication {
   return new PublicClientApplication({
@@ -37,6 +38,7 @@ export function MSALInstanceFactory(): IPublicClientApplication {
     HeaderComponent,
     AdditemComponent,
     SignalrComponent,
+    ChatComponent,
   ],
   imports: [
     BrowserModule,
