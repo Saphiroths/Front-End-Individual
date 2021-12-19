@@ -1,4 +1,3 @@
-
 import { Injectable, OnInit } from '@angular/core';
 import * as signalR from '@aspnet/signalr';
 import { HttpClient } from '@angular/common/http';
@@ -15,7 +14,7 @@ export class ChatService {
 
 public startConnection()
 {
-   this.hubconnection = new signalR.HubConnectionBuilder().withUrl("http://localhost:5000/chatsocket",
+   this.hubconnection = new signalR.HubConnectionBuilder().withUrl("https://localhost:44335/chatsocket",
   { skipNegotiation: true, transport: signalR.HttpTransportType.WebSockets})
     .build();
 

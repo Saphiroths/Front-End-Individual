@@ -8,14 +8,12 @@ import { MsalModule, MsalService, MSAL_INSTANCE } from '@azure/msal-angular';
 import { IPublicClientApplication, PublicClientApplication } from '@azure/msal-browser';
 import { PublicPageComponent } from './public-page/public-page.component';
 import { NarutoPageComponent } from './naruto-page/naruto-page.component';
-import { SignalRService } from './signal-r.service';
 import { RegistrationComponent } from './Registration/registration.component';
 import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MicrosoftLoginComponent } from './microsoft-login/microsoft-login.component';
 import { HeaderComponent } from './header/header.component';
 import { AdditemComponent } from './additem/additem.component';
-import { SignalrComponent } from './signalr/signalr.component';
 import { ChatComponent } from './chat/chat.component';
 
 export function MSALInstanceFactory(): IPublicClientApplication {
@@ -37,7 +35,6 @@ export function MSALInstanceFactory(): IPublicClientApplication {
     MicrosoftLoginComponent,
     HeaderComponent,
     AdditemComponent,
-    SignalrComponent,
     ChatComponent,
   ],
   imports: [

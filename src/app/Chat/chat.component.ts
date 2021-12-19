@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ChatService } from 'src/app/services/chat.service';
 import { Message } from '../Models/message';
+import { MsalService } from '@azure/msal-angular';
+import { UserService } from '../Services/user.service';
+import { User } from '../Models/user';
 
 @Component({
   selector: 'app-chat',
@@ -9,7 +12,7 @@ import { Message } from '../Models/message';
 })
 export class ChatComponent implements OnInit {
 
-  constructor(private chatService: ChatService) {}
+  constructor(private chatService: ChatService, private msalService: MsalService, private userService: UserService) {}
 
   ngOnInit(): void {
     this.chatService.retrieveMappedObject().subscribe( (receivedObj: Message) => { this.addToInbox(receivedObj);});  // calls the service method to get the new messages sent
@@ -21,15 +24,20 @@ export class ChatComponent implements OnInit {
   msgInboxArray: Message[] = [];
 
   send(): void {
-    if(this.msgDto) {
-      console.log(this.msgDto)
-      if(this.msgDto.user.length == 0 || this.msgDto.msgText.length == 0){
-        window.alert("Both fields are required.");
-        return;
-      } else {
-        this.chatService.broadcastMessage(this.msgDto);                   // Send the message via a service
+    this.userService.getUser(this.msalService.instance.getActiveAccount()!.username)
+    .subscribe( (response)=> {
+      this.msgDto.user = response.username
+      if(this.msgDto) {
+        console.log(this.msgDto)
+        if(this.msgDto.msgText.length == 0){
+          window.alert("Both fields are required.");
+          return;
+        } else {
+          this.chatService.broadcastMessage(this.msgDto);                   // Send the message via a service
+        }
       }
-    }
+    })
+   
   }
 
   addToInbox(obj: Message) {
