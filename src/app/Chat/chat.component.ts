@@ -26,9 +26,8 @@ export class ChatComponent implements OnInit {
   send(): void {
     this.userService.getUser(this.msalService.instance.getActiveAccount()!.username)
     .subscribe( (response)=> {
-      this.msgDto.user = response.username
+      this.msgDto.user = response.username;
       if(this.msgDto) {
-        console.log(this.msgDto)
         if(this.msgDto.msgText.length == 0){
           window.alert("Both fields are required.");
           return;

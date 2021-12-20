@@ -1,0 +1,15 @@
+<br>
+<div class="container" >
+    <div class="row justify-content-center" style="text-align: center;">
+        <div *ngFor="let Item of Item" class="col-md-5 col-sm-5">
+            <figure class="card card-product-grid">
+                <div  class="img-wrap"> <img src="{{Item.picture}}" height="600"/> </div>
+                <figcaption>
+                    <a href="#" class="title">{{Item.title}}</a>
+                    <div class="description mt-2">{{Item.description}}</div>
+                    <div class="price mt-2">${{Item.price}}</div> 
+                    <div class="category mt-2">{{Item.category}}</div>                 
+                </figcaption>
+            </figure> 
+        </div>
+   </div>

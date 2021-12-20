@@ -31,19 +31,19 @@ export class ItemsComponent implements OnInit {
     console.log(this.Items);
   }
 
-  getItems(): void {
+  public getItems(): void {
     this.itemService.getItems()
       .subscribe(item => this.Items = item);
 
   }
 
-  deleteItems(item: Item) {
+  public deleteItems(item: Item) {
     console.log(item)
     this.itemService.deleteItem(item)
     .subscribe()
   }
 
-  updateItems(item: Item) {
+  public updateItems(item: Item) {
     this.updateItem.title = item.title;
     this.updateItem.description = item.description;
     this.updateItem.category = item.category;
@@ -57,7 +57,7 @@ export class ItemsComponent implements OnInit {
     )
   }
 
-  openModal(content: any, Item: Item) {
+  public openModal(content: any, Item: Item) {
     this.updateItem.id = Item.id
     console.log(Item);
     this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title', size: 'lg'}).result.then((result) => {
@@ -79,7 +79,7 @@ export class ItemsComponent implements OnInit {
   }
 
  
-  getGreeting(): String{
+  public getGreeting(): String{
     var greeting: String;
     var today = new Date()
     var curHr = today.getHours()
@@ -94,7 +94,7 @@ export class ItemsComponent implements OnInit {
     return greeting;
   }
 
-  reloadCurrentPage() {
+ public reloadCurrentPage() {
     setTimeout(() => window.location.reload(), 500);
    }
 

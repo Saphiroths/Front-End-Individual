@@ -30,27 +30,26 @@ export class RegistrationComponent {
                  this.registration.popup.subscribe((val) => {
                    if(val === 'open')
                    {
-                     this.openModal(this.modalRef)
+                     this.openModal(this.modalRef);
                    }
-                 } )
+                 } );
                }
 
   newUser : User = {} as User;
   public closeResult = '';
 
   registrate(user : User) {
-    this.newUser.email =
-    this.msalService.instance.getActiveAccount()!.username
-    this.newUser.username = user.username 
-    this.newUser.address = user.address
-    this.newUser.city = user.city
+    this.newUser.email = this.msalService.instance.getActiveAccount()!.username;
+    this.newUser.username = user.username;
+    this.newUser.address = user.address;
+    this.newUser.city = user.city;
     this.userService.createUser(this.newUser)
     .subscribe(
       (user) => {
         this.newUser = user
         console.log(user)
       }
-    )
+    );
   }
 
   openModal(content: any) {

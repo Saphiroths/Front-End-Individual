@@ -5,5 +5,5 @@ export interface Item {
     price: number;
     category: number;
     picture: string;
-    
+    userid: number;
   }

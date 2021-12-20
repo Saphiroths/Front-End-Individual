@@ -32,26 +32,25 @@ export class MicrosoftLoginComponent implements OnInit {
     this.msalService.instance.handleRedirectPromise().then(
       res => {
         if (res != null && res.account != null) {
-          this.msalService.instance.setActiveAccount(res.account)
+          this.msalService.instance.setActiveAccount(res.account);
         }
       }
-    )
+    );
     
   }
 
   login() {
     this.msalService.loginPopup().subscribe( (response: AuthenticationResult) => {
-      this.msalService.instance.setActiveAccount(response.account)
-      this.logincheck = true     
-      this.newUser.email = 
-      this.msalService.instance.getActiveAccount()!.username
-      this.addUser()
+      this.msalService.instance.setActiveAccount(response.account);
+      this.logincheck = true;    
+      this.newUser.email = this.msalService.instance.getActiveAccount()!.username;
+      this.addUser();
     } )
   }
 
   logout() {
     this.msalService.logout();
-    this.logincheck = false
+    this.logincheck = false;
   }
 
   
@@ -59,7 +58,7 @@ export class MicrosoftLoginComponent implements OnInit {
     this.userService.addUser(this.newUser)
     .subscribe(
     (user) => {
-      this.newUser = user
+      this.newUser = user;
     },
     (error) => {
       if ( error.error === "User doesn't exist")
@@ -68,7 +67,7 @@ export class MicrosoftLoginComponent implements OnInit {
 
       }
             
-    })
+    });
   }
 
   

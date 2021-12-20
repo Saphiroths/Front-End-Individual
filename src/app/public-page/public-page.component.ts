@@ -14,7 +14,7 @@ export class PublicPageComponent implements OnInit {
   }
 
   getName(): string {
-    return this.msalService.instance.getActiveAccount()!.username
+    return this.msalService.instance.getActiveAccount()!.username;
   }
 
 }

@@ -8,9 +8,7 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class UserService {  
-  
 
-  
   public API_URL: string = environment.USER_API_URL;
   public userURL: string = this.API_URL + '/users/Login';
   private createURL: string = this.API_URL + '/users/create';
@@ -24,15 +22,15 @@ export class UserService {
     private http: HttpClient){ }
   
   addUser(User: User): Observable<User> {
-    return this.http.post<User>(this.userURL, User, this.httpOptions)
+    return this.http.post<User>(this.userURL, User, this.httpOptions);
   }
 
   createUser(User: User): Observable<User> {
-    return this.http.post<User>(this.createURL, User, this.httpOptions)
+    return this.http.post<User>(this.createURL, User, this.httpOptions);
   }
   
   getUser(Email: string): Observable<User> {
-    return this.http.get<User>(this.getURL + Email, this.httpOptions)
+    return this.http.get<User>(this.getURL + Email, this.httpOptions);
   }
 
 }

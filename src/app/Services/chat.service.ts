@@ -10,7 +10,7 @@ import { Observable, Subject } from 'rxjs';
 })
 export class ChatService {
 
-  hubconnection?:signalR.HubConnection
+  hubconnection?:signalR.HubConnection;
 
 public startConnection()
 {

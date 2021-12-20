@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NarutoPageComponent } from './naruto-page.component';
+import { UserItemsComponent } from './user-items.component';
 
-describe('NarutoPageComponent', () => {
-  let component: NarutoPageComponent;
-  let fixture: ComponentFixture<NarutoPageComponent>;
+describe('UserItemsComponent', () => {
+  let component: UserItemsComponent;
+  let fixture: ComponentFixture<UserItemsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NarutoPageComponent ]
+      declarations: [ UserItemsComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NarutoPageComponent);
+    fixture = TestBed.createComponent(UserItemsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

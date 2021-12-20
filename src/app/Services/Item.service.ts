@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Item } from '../Models/Item';
 import { Observable, Subject } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { User } from '../Models/user';
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +14,7 @@ export class ItemService {
   private createURL: string = this.API_URL + '/item/create'
   private updateURL: string = this.API_URL + '/item/update'
   private deleteURL: string = this.API_URL + '/item/delete/'
+  private getitembyuserURL: string = this.API_URL + '/item/users/'
   httpOptions = {
     headers: new HttpHeaders({'Content-Type': 'application/json'}),
   }
@@ -26,14 +28,19 @@ export class ItemService {
   }
 
   createItem(Item: Item): Observable<Item> {
-    return this.http.post<Item>(this.createURL, Item, this.httpOptions)
+    return this.http.post<Item>(this.createURL, Item, this.httpOptions);
   }
 
   updateItem(Item: Item): Observable<Item> {
-    return this.http.put<Item>(this.updateURL, Item, this.httpOptions)
+    return this.http.put<Item>(this.updateURL, Item, this.httpOptions);
   }
 
   deleteItem(Item: Item): Observable<Item> {
-    return this.http.delete<Item>(this.deleteURL + Item.id, this.httpOptions)
+    return this.http.delete<Item>(this.deleteURL + Item.id, this.httpOptions);
   }
+
+  getItemByUser(ID: Number): Observable<Item[]> {
+    return this.http.get<Item[]>(this.getitembyuserURL + ID);
+  }
+
 }
