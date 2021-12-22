@@ -1,13 +1,9 @@
 <meta name="referrer" content="unsafe-url">
 <div class = "container"> 
-    <ul class="nav nav-tabs justify-content-center">
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item" >
-          <button (click)="login()" *ngIf= "!logincheck" class="nav-link" href="#" >
-              <img src="https://i.gyazo.com/f645966e66edae69b860383427ecdddc.png" width="111" height="100">
-        </button>
-        <button (click)="logout()" *ngIf= "logincheck" class="nav-link" href="#" >
-            <img src="https://i.gyazo.com/f645966e66edae69b860383427ecdddc.png" width="111" height="100">
-      </button>
+          <button (click)="login()" *ngIf= "!logincheck" class="btn-success" href="#" >Login</button>
+          <button (click)="logout()" *ngIf= "logincheck" class="btn-danger" href="#" >Logout</button>     
         </li>
       </ul>
 </div>

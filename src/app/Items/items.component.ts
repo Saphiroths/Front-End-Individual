@@ -59,7 +59,6 @@ export class ItemsComponent implements OnInit {
 
   public openModal(content: any, Item: Item) {
     this.updateItem.id = Item.id
-    console.log(Item);
     this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title', size: 'lg'}).result.then((result) => {
       this.closeResult = `Closed with: ${result}`;
     }, (reason) => {
