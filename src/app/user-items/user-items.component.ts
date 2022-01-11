@@ -36,4 +36,14 @@ export class UserItemsComponent implements OnInit {
 
   }
 
+  getItemsByUserId(): void{
+    this.userService.getUser(this.msalService.instance.getActiveAccount()!.username)
+    .subscribe( (response) => {
+      this.itemService.getItemByUserId(response.id)
+      .subscribe((items) => {
+        this.Item = items;
+      })
+    })
+
+  }
 }

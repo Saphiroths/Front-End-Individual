@@ -15,6 +15,7 @@ export class ItemService {
   private updateURL: string = this.API_URL + '/item/update'
   private deleteURL: string = this.API_URL + '/item/delete/'
   private getitembyuserURL: string = this.API_URL + '/item/users/'
+  private getitembyuseridURL: string = this.API_URL + '/item/get/'
   httpOptions = {
     headers: new HttpHeaders({'Content-Type': 'application/json'}),
   }
@@ -41,6 +42,10 @@ export class ItemService {
 
   getItemByUser(ID: Number): Observable<Item[]> {
     return this.http.get<Item[]>(this.getitembyuserURL + ID);
+  }
+
+  getItemByUserId(ID: Number): Observable<Item[]> {
+    return this.http.get<Item[]>(this.getitembyuseridURL + ID);
   }
 
 }
