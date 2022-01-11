@@ -7,7 +7,8 @@
     "build": "ng build",
     "prod": "ng-build --prod",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "e2e": "cypress open"
   },
   "private": true,
   "dependencies": {
@@ -25,6 +26,7 @@
     "@ng-bootstrap/ng-bootstrap": "^10.0.0",
     "bootstrap": "^5.1.1",
     "cors": "^2.8.5",
+    "cypress": "^9.2.1",
     "jquery": "^3.6.0",
     "ngx-bootstrap": "^7.0.0",
     "popper.js": "^1.16.1",
