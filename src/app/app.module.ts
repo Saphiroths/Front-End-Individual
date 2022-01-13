@@ -43,7 +43,10 @@ export function MSALInstanceFactory(): IPublicClientApplication {
     HttpClientModule,
     MsalModule,
     FormsModule,
-    NgbModule
+    NgbModule,
+    ChatComponent,
+    AdditemComponent,
+    
   ],
   providers: [
     {
